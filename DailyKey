@@ -1,0 +1,20 @@
+//Made by Callan0985
+# Set the cooldown duration and message
+set cooldown duration to 24 hours
+set cooldown message to "&fWait %cooldown% hours before using again!"
+
+# Define the give command function
+function giveDailyReward(player):
+  give tripwire hook to player with protection 1 and lore "&3&lRight click on crate!"
+
+# Define the /daily command
+command /daily:
+  trigger:
+    # Give the daily reward to the player
+    giveDailyReward(player)
+    # Set the cooldown for the player
+    set cooldown of player to cooldown duration
+    # Send the cooldown message to the player
+    send "&aYou have received your daily reward!" to player
+    send cooldown message to player
+//Not Tested
