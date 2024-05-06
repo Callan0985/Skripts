@@ -1,0 +1,11 @@
+# Define the /fly command
+command /fly:
+  permission: fly.command
+  trigger:
+    # Toggle the player's flying ability
+    if player is flying:
+      set player to not flying
+      send "&cYou are no longer flying." to player
+    else:
+      set player to flying
+      send "&aYou are now flying." to player
